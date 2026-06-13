@@ -3,9 +3,6 @@ const Header = ({ course }) => {
 };
 
 const Content = ({ content }) => {
-  let total = 0;
-  content.forEach((part) => (total += part.exercises));
-
   return (
     <>
       {content.map((part) => (
@@ -13,7 +10,9 @@ const Content = ({ content }) => {
       ))}
 
       <p>
-        <strong>total of {total} exercises</strong>
+        <strong>
+          total of {content.reduce((s, p) => s + p.exercises, 0)} exercises
+        </strong>
       </p>
     </>
   );
