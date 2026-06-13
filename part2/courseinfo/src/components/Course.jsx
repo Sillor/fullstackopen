@@ -31,10 +31,10 @@ const Course = ({ courses }) => {
     <>
       <h1>Web Development curriculum</h1>
       {courses.map((course) => (
-        <>
+        <div key={course.id}>
           <Header course={course} />
           <Content content={course.parts} />
-        </>
+        </div>
       ))}
     </>
   );
