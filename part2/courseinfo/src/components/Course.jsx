@@ -1,5 +1,5 @@
 const Header = ({ course }) => {
-  return <h1>{course.name}</h1>;
+  return <h2>{course.name}</h2>;
 };
 
 const Content = ({ content }) => {
@@ -26,11 +26,16 @@ const Part = ({ part }) => {
   );
 };
 
-const Course = ({ course }) => {
+const Course = ({ courses }) => {
   return (
     <>
-      <Header course={course} />
-      <Content content={course.parts} />
+      <h1>Web Development Curriculum</h1>
+      {courses.map((course) => (
+        <>
+          <Header course={course} />
+          <Content content={course.parts} />
+        </>
+      ))}
     </>
   );
 };
