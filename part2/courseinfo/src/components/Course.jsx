@@ -3,11 +3,18 @@ const Header = ({ course }) => {
 };
 
 const Content = ({ content }) => {
+  let total = 0;
+  content.forEach((part) => (total += part.exercises));
+
   return (
     <>
       {content.map((part) => (
         <Part key={part.id} part={part} />
       ))}
+
+      <p>
+        <strong>total of {total} exercises</strong>
+      </p>
     </>
   );
 };
