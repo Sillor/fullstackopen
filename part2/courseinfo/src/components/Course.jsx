@@ -29,7 +29,7 @@ const Part = ({ part }) => {
 const Course = ({ courses }) => {
   return (
     <>
-      <h1>Web Development Curriculum</h1>
+      <h1>Web Development curriculum</h1>
       {courses.map((course) => (
         <>
           <Header course={course} />
